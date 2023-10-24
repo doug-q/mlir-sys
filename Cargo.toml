@@ -1,13 +1,27 @@
 [package]
 name = "mlir-sys"
-version = "0.2.0"
-authors = ["McCoy R. Becker, Yota Toyama"]
-edition = "2021"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+repository.workspace = true
+readme.workspace = true
+license-file.workspace = true
 description = "Rust bindings to the MLIR C API."
-repository = "https://github.com/femtomc/mlir-sys"
-readme = "README.md"
-links = "MLIR"
-license-file = "LICENSE"
+
+[dependencies]
+mlir-sys0 = { path = "./mlir-sys0" }
+libloading = "*"
 
 [build-dependencies]
 bindgen = "0.68.1"
+
+[workspace]
+members = [".","mlir-sys0"]
+
+[workspace.package]
+version = "0.2.0"
+authors = ["McCoy R. Becker, Yota Toyama"]
+edition = "2021"
+repository = "https://github.com/femtomc/mlir-sys"
+readme = "README.md"
+license-file = "LICENSE"

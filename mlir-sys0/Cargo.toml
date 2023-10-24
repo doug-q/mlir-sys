@@ -1,0 +1,10 @@
+[package]
+name = "mlir-sys0"
+version.workspace = true
+authors.workspace = true
+links = "MLIR"
+license-file.workspace = true
+readme.workspace = true
+repository.workspace = true
+edition.workspace = true
+description = "TODO"

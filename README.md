@@ -17,3 +17,13 @@ This crate searches an `llvm-config` command on build and uses it to determine b
 ## License
 
 [MIT](LICENSE)
+
+## mlir-sys0
+
+We set `links = "MLIR"` on the mlir-sys0 crate, which finds the LLVM
+installation, sets a link path, and exports metadata for include directories and
+libraries to link. This ensures that users can override the build.rs output.
+
+`mlir-sys` then emits the `rustc-link-lib` instructions and contains the
+generated bindings. It is required to declare the binding and issue the
+`rustc-link-lib` in the same crate to reliably link to dynamic libraries.
