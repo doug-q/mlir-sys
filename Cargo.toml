@@ -10,10 +10,12 @@ description = "Rust bindings to the MLIR C API."
 
 [dependencies]
 mlir-sys0 = { path = "./mlir-sys0" }
-libloading = "*"
+
+
 
 [build-dependencies]
-bindgen = "0.68.1"
+bindgen = { version = "0.69.1", features = ["experimental"] }
+cc = "1.0"
 
 [workspace]
 members = [".","mlir-sys0"]
