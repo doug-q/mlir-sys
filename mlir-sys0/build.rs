@@ -64,7 +64,7 @@ fn run() -> Result<(), Box<dyn Error>> {
         }
     }).collect::<Vec<_>>();
     if let Some(name) = get_system_libcpp() {
-        libs.append(name.to_string());
+        libs.push(name.to_string());
     }
 
     println!("cargo:link_libs={}", libs.join(";"));
